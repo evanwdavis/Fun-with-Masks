@@ -1,4 +1,4 @@
 Fun-with-Masks
 ==============
 
-some examples of user CALayer masks in creative ways. 
+some examples of using CALayer masks in creative ways.
