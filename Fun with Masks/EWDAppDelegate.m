@@ -20,9 +20,9 @@
     self.window.backgroundColor = [UIColor blackColor];
     // Override point for customization after application launch.
     UIViewController *viewController1, *viewController2, *viewController3;
-    viewController1 = [[EWDGradientExampleVC alloc] initWithNibName:nil bundle:nil];
-    viewController2 = [[EWDBlurExampleVC alloc] initWithNibName:nil bundle:nil];
-    viewController3 = [[EWDAnimationExampleVC alloc] initWithNibName:nil bundle:nil];
+    viewController1 = [[EWDGradientExampleVC alloc] initWithNibName:@"EWDGradientExampleVC" bundle:nil];
+    viewController2 = [[EWDBlurExampleVC alloc] initWithNibName:@"EWDBlurExampleVC" bundle:nil];
+    viewController3 = [[EWDAnimationExampleVC alloc] initWithNibName:@"EWDAnimationExampleVC" bundle:nil];
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = @[viewController1, viewController2, viewController3];
     self.window.rootViewController = self.tabBarController;

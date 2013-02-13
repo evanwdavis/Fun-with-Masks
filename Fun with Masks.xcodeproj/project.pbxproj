@@ -30,6 +30,9 @@
 		357A116C16C609020045D888 /* pw_maze_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 357A116B16C609020045D888 /* pw_maze_white.png */; };
 		357A116E16C6090A0045D888 /* pw_maze_white_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 357A116D16C6090A0045D888 /* pw_maze_white_@2X.png */; };
 		357A117016C60C8E0045D888 /* telavivpano3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 357A116F16C60C8D0045D888 /* telavivpano3.jpg */; };
+		35B91C0216CA99F200E1A60D /* EWDAnimationExampleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35B91C0116CA99F200E1A60D /* EWDAnimationExampleVC.xib */; };
+		35B91C0416CA9A0600E1A60D /* EWDBlurExampleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35B91C0316CA9A0600E1A60D /* EWDBlurExampleVC.xib */; };
+		35B91C0616CA9A1900E1A60D /* EWDGradientExampleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35B91C0516CA9A1900E1A60D /* EWDGradientExampleVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +66,9 @@
 		357A116B16C609020045D888 /* pw_maze_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pw_maze_white.png; sourceTree = "<group>"; };
 		357A116D16C6090A0045D888 /* pw_maze_white_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pw_maze_white_@2X.png"; sourceTree = "<group>"; };
 		357A116F16C60C8D0045D888 /* telavivpano3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = telavivpano3.jpg; sourceTree = "<group>"; };
+		35B91C0116CA99F200E1A60D /* EWDAnimationExampleVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EWDAnimationExampleVC.xib; sourceTree = "<group>"; };
+		35B91C0316CA9A0600E1A60D /* EWDBlurExampleVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EWDBlurExampleVC.xib; sourceTree = "<group>"; };
+		35B91C0516CA9A1900E1A60D /* EWDGradientExampleVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EWDGradientExampleVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,7 @@
 			children = (
 				357A113B16C5E6B50045D888 /* EWDGradientExampleVC.h */,
 				357A113C16C5E6B50045D888 /* EWDGradientExampleVC.m */,
+				35B91C0516CA9A1900E1A60D /* EWDGradientExampleVC.xib */,
 				357A113E16C5E6B50045D888 /* first.png */,
 				357A114016C5E6B50045D888 /* first@2x.png */,
 			);
@@ -154,6 +161,7 @@
 			children = (
 				357A114216C5E6B50045D888 /* EWDBlurExampleVC.h */,
 				357A114316C5E6B50045D888 /* EWDBlurExampleVC.m */,
+				35B91C0316CA9A0600E1A60D /* EWDBlurExampleVC.xib */,
 				357A114516C5E6B50045D888 /* second.png */,
 				357A114716C5E6B50045D888 /* second@2x.png */,
 			);
@@ -165,6 +173,7 @@
 			children = (
 				357A115D16C5E7BC0045D888 /* EWDAnimationExampleVC.h */,
 				357A115E16C5E7BC0045D888 /* EWDAnimationExampleVC.m */,
+				35B91C0116CA99F200E1A60D /* EWDAnimationExampleVC.xib */,
 			);
 			name = Animation;
 			sourceTree = "<group>";
@@ -246,6 +255,9 @@
 				357A116E16C6090A0045D888 /* pw_maze_white_@2X.png in Resources */,
 				357A117016C60C8E0045D888 /* telavivpano3.jpg in Resources */,
 				3501367E16C70F18006EF083 /* sample_profile_bg.jpg in Resources */,
+				35B91C0216CA99F200E1A60D /* EWDAnimationExampleVC.xib in Resources */,
+				35B91C0416CA9A0600E1A60D /* EWDBlurExampleVC.xib in Resources */,
+				35B91C0616CA9A1900E1A60D /* EWDGradientExampleVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,9 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface EWDGradientExampleVC ()
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *bigImageView;
 
 @end
 
@@ -24,35 +27,37 @@
     return self;
 }
 
-- (void)loadView
+- (void)viewDidLoad
 {
-    //initial view setup
-    self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
-    self.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    [super viewDidLoad];
+    
+    self.scrollView.scrollEnabled = YES;
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pw_maze_white"]];
     
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(5.0f, 5.0f, CGRectGetWidth(self.view.bounds) - 10.0f, CGRectGetHeight(self.view.bounds) - 10.0f)];
-    scrollView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    
-    UIImageView *bigImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"jerusalempano2.jpg"]];
-    bigImage.frame = CGRectMake(0.0f, 0.0f, CGRectGetWidth(scrollView.bounds) * 4, CGRectGetHeight(scrollView.bounds));
-    bigImage.contentMode = UIViewContentModeScaleAspectFill;
-    bigImage.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    
-    [scrollView addSubview:bigImage];
-    [scrollView setContentSize:CGSizeMake(CGRectGetWidth(bigImage.bounds), CGRectGetHeight(scrollView.bounds) - 49.0f)];
-    
-    UIView *containerView = [[UIView alloc] initWithFrame:self.view.bounds];
-    containerView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    [containerView addSubview:scrollView];
-    [self.view addSubview:containerView];
-    
-    UILabel *testLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, CGRectGetHeight(self.view.bounds) - 30.0f, 60.0f, 20.0f)];
-    testLabel.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin;
-    testLabel.backgroundColor = [UIColor clearColor];
-    testLabel.text = @"Howdy!";
-    [self.view addSubview:testLabel];
-    
+    [self createGradientMask];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    self.scrollView.contentSize = self.bigImageView.bounds.size;
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Mask Creation
+- (void)createGradientMask
+{
     //creating our gradient mask
     CAGradientLayer *maskLayer = [CAGradientLayer layer];
     
@@ -64,7 +69,7 @@
     maskLayer.startPoint = CGPointMake(0.0f, 1.0f);
     //ends in top right
     maskLayer.endPoint = CGPointMake(1.f, 0.0f);
-
+    
     
     //setting our colors - since this is a mask the color itself is irrelevant - all that matters is the alpha. A clear color will completely hide the layer we're masking, an alpha of 1.0 will completely show the masked view.
     UIColor *outerColor = [UIColor colorWithWhite:1.0 alpha:0.0];
@@ -73,29 +78,11 @@
     //an array of colors that dictatates the gradient(s)
     maskLayer.colors = @[(id)outerColor.CGColor, (id)outerColor.CGColor, (id)innerColor.CGColor, (id)innerColor.CGColor];
     //these are percentage points along the line defined by our startPoint and endPoint and correspond to our colors array. The gradient will shift between the colors between these percentage points.
-    maskLayer.locations = @[@0.0, @0.05, @0.5, @1.0f];
+    maskLayer.locations = @[@0.0, @0.15, @0.5, @1.0f];
     
     maskLayer.bounds = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds));
-    containerView.layer.mask = maskLayer; 
+    self.containerView.layer.mask = maskLayer;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
